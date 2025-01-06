@@ -1,0 +1,136 @@
+// Import Angular Material theming utilities
+@use '@angular/material' as mat;
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+// Define your color palette
+$primary-color: #000000; // Black background
+$accent-color: #7e3ff2; // Purple accent
+$warn-color: #ff5252; // Red warning color
+
+$theme-foreground: (
+  base: #ffffff, // White text
+  divider: #cccccc, // Light gray dividers
+  disabled: rgba(255, 255, 255, 0.38),
+  hint-text: rgba(255, 255, 255, 0.38),
+  secondary-text: rgba(255, 255, 255, 0.54),
+  icon: rgba(255, 255, 255, 0.54),
+  text: #ffffff, // Main text color
+);
+
+$theme-background: (
+  background: $primary-color,
+  hover: #1a1a1a,
+  card: #121212,
+  dialog: #121212,
+  disabled-button: rgba(255, 255, 255, 0.12),
+  raised-button: #1e1e1e,
+  focused-button: #2a2a2a00,
+  selected-button: #2a2a2a,
+  selected-disabled-button: #121212,
+  disabled-button-toggle: #121212,
+  unselected-chip: #1e1e1e,
+  disabled-list-option: #121212,
+);
+
+*{
+  font-family: Geist Mono, 'monospace' !important;
+}
+
+// Define Material color palettes
+$custom-primary: mat.define-palette(mat.$deep-purple-palette, 900, 500, 100);
+$custom-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme
+$custom-theme: mat.define-dark-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+  ),
+  foreground: $theme-foreground,
+));
+
+// Apply the theme
+@include mat.all-component-themes($custom-theme);
+
+// Custom styles for Material components
+body {
+  font-family: 'Geist Mono', monospace;
+  background-color: $primary-color;
+  color: map-get($theme-foreground, text);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mat-toolbar {
+  background: $primary-color;
+  color: mat.get-color-from-palette($custom-accent, A200);
+  font-family: 'Geist Mono', monospace;
+  height: 50px !important;
+}
+
+.mat-button, .mat-raised-button {
+  border-radius: 0;
+  text-transform: none;
+  background-color: $primary-color;
+  color: map-get($theme-foreground, text);
+
+  &:hover {
+    background-color: mat.get-color-from-palette($custom-accent, A400);
+  }
+}
+
+
+.mat-card , .mat-mdc-card {
+  background: #000000 !important;
+  background-color: #000000;
+  color: map-get($theme-foreground, text);
+  border-radius: 8px;
+  box-shadow: 0 0px 20px 14px rgb(89 0 255 / 17%) !important;
+  padding: 16px;
+  margin: 16px;
+}
+
+.mat-input-element {
+  color: map-get($theme-foreground, text);
+  caret-color: $accent-color;
+}
+
+.mat-checkbox .mat-checkbox-background {
+  background-color: mat.get-color-from-palette($custom-accent, A200);
+  border-radius: 4px;
+}
+
+.mat-slider .mat-slider-thumb {
+  background-color: mat.get-color-from-palette($custom-accent, A200);
+}
+
+.mat-slider .mat-slider-track {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+
+// Navigation Links
+nav a {
+  color: map-get($theme-foreground, text);
+  font-family: 'Geist Mono', monospace;
+  text-decoration: none;
+  margin: 0 8px;
+
+  &:hover {
+    color: mat.get-color-from-palette($custom-accent, A200);
+  }
+}
+
+// Footer styles
+footer {
+  background-color: $primary-color;
+  color: map-get($theme-foreground, text);
+  text-align: center;
+  padding: 16px;
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}

@@ -1,0 +1,175 @@
+// Left Panel
+
+// Profile Area
+.profile{
+    display: flex;
+    margin-bottom: auto;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+}
+.profile *{
+    margin: auto;
+
+}
+.profile img{
+    width: 30%;
+    max-width: 150px;
+}
+
+// Skill Card
+.skill-notch-container{
+    display: flex;
+    padding: 5px;
+    padding-left: 0px;
+}
+.notch{
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/notch-icon.svg');
+}
+.skill-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255,);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px auto;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  
+  .skill {
+    width: 50%;
+  }
+  
+  .skill-title {
+    font-family: 'Geist Mono', monospace;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .skill-level {
+    font-family: 'Geist Mono', monospace;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-left: 8px;
+  }
+
+  mat-grid-tile{
+    height: 100vh;
+    padding-top: 0px !important;
+  }
+  .panel{
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-panel{
+    width: 60vw !important;
+  }
+  .right-panel{
+    margin-left: 20px;
+  }
+
+  
+
+
+
+//   Right Panel
+.nav-container{
+    width: 80%;
+    max-width: 290px;
+    margin-left: auto;   
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.nav-container div{
+    margin-top: 20px;
+}
+.nav-button{
+    background: #000000 !important;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Geist Mono', monospace !important;
+    width: 70%;
+    margin:0 auto;
+    
+}
+.contact-icons{
+    width: 90%;
+    margin: auto;
+    background-color: #d9d9d913;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+.contact-icons *{
+    margin: 5px;
+    width: 10%;
+}
+  
+  .spacer {
+    flex-grow: 1; /* Pushes the label to the right */
+  }
+
+
+
+  @media only screen and (max-width: 1124px) {
+    .skill{
+        width: 80%;
+        margin: auto;
+    }
+    .profile{
+        flex-direction: column;
+    }
+    .nav-container{
+        min-width: 290px;
+    }
+  }
+
+
+
+//   Screen Resizing
+
+.mobile{
+    display: none;
+}
+.desktop{
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        height: 70vh;
+        padding: 10vh;
+        
+        align-items: center;
+    }
+    .nav-container{
+        margin: 0px;
+    }
+    .profile img{
+        min-width: 100px;   
+    }
+    .desktop{
+        display: none;
+    }
+    .profile{
+        min-width: max-content;
+        margin-bottom: 10vh;
+    }
+}

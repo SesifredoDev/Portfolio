@@ -1,0 +1,100 @@
+
+
+
+    <mat-grid-list [cols]="2" (window:resize)="setColumns()" rowHeight="2:1" class="desktop">
+        <mat-grid-tile class="left-panel">
+            <div class=" panel">
+                
+                <div class="profile">
+                    <img src="assets/profile-img.svg" alt="">
+                    <div>
+                        <h1>Paolo Chaffey</h1>
+                        <p>Junior Software Engineer</p>
+    
+                    </div>
+                </div>
+                <mat-card class="skill-card">
+    
+                    <div class="skill" *ngFor="let stat of stats">
+                        <span class="skill-title">{{stat.title}}</span>
+                        <span class="skill-level">- {{stat.years}} years</span>
+                        <div class="skill-notch-container">
+                            <div class="notch" *ngFor="let n of numSequence(stat.years)"></div>
+                        </div>
+                    </div>
+    
+                </mat-card>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="right-panel">
+            <div class=" panel">
+                <mat-card class="nav-container">
+                    <div>
+                        <button mat-button class="nav-button">
+                            About ->
+                       </button>
+                       <button mat-button class="nav-button">
+                            Portfolio ->
+                      </button>
+                      <button mat-button class="nav-button">
+                            Blog ->
+                       </button>
+                    </div>
+    
+                    <div class="contact-details">
+                        <div class="email-phone">
+                            <p>07727341069 <br> dev&#64;pchaffey.uk</p>
+                        </div>
+                        <div class="contact-icons">
+                            <a href="https://www.linkedin.com/in/paolo-chaffey-a566a715b/" target="_blank"><img src="assets/icon/linkedin.svg" alt=""></a>
+                            <a href="https://www.instagram.com/sesifredodev/" target="_blank"><img src="assets/icon/insta.svg" alt=""></a>
+                            <a href="https://github.com/SesifredoDev/" target="_blank"><img src="assets/icon/github.svg" alt=""></a>
+                            <a href="https://discord.com/users/1015015955954955398" target="_blank"><img src="assets/icon/discord.svg" alt=""></a>
+                            <a href="https://www.youtube.com/channel/UCq4YpZV2v5rZrVYrYdLX2jw" target="_blank"><img src="assets/icon/youtube.svg" alt=""></a>
+                        </div>
+                    </div>
+                    
+                </mat-card>
+            </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="mobile">
+        <div class="profile">
+            <img src="assets/profile-img.svg" alt="">
+            <div>
+                <h1>Paolo Chaffey</h1>
+                <p>Junior Software Engineer</p>
+
+            </div>
+            
+        </div>
+
+        <mat-card class="nav-container">
+            <div>
+                <button mat-button class="nav-button">
+                    About ->
+               </button>
+               <button mat-button class="nav-button">
+                    Portfolio ->
+              </button>
+              <button mat-button class="nav-button">
+                    Blog ->
+               </button>
+            </div>
+
+            <div class="contact-details">
+                <div class="email-phone">
+                    <p>07727341069 <br> dev&#64;pchaffey.uk</p>
+                </div>
+                <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/pchaffey/" target="_blank"><img src="assets/icon/linkedin.svg" alt=""></a>
+                    <a href="https://www.instagram.com/pchaffey/" target="_blank"><img src="assets/icon/insta.svg" alt=""></a>
+                    <a href="https://github.com/pchaffey" target="_blank"><img src="assets/icon/github.svg" alt=""></a>
+                    <a href="https://discord.com/users/1015015955954955398" target="_blank"><img src="assets/icon/discord.svg" alt=""></a>
+                    <a href="https://www.youtube.com/channel/UCq4YpZV2v5rZrVYrYdLX2jw" target="_blank"><img src="assets/icon/youtube.svg" alt=""></a>
+                </div>
+            </div>
+            
+        </mat-card>
+      </div>
