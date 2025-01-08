@@ -1,6 +1,24 @@
+
 // Import Angular Material theming utilities
 @use '@angular/material' as mat;
+
+@use "igniteui-angular/theming" as *;
+
+// Uncomment the following lines if you want to add a custom palette:
+// $primary: #731963 !default;
+// $secondary: #ce5712 !default;
+// $app-palette: palette($primary, $secondary, $surface);
+
+/* autoprefixer grid: on */
+
+@include core();
+@include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+@include theme($default-palette);
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+
+
+
 
 // Define your color palette
 $primary-color: #000000; // Black background
@@ -134,3 +152,6 @@ footer {
 .material-icons{
   font-family: 'Material Icons' !important;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -16,11 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
   ]
 })
 export class AppComponent implements OnInit {
-  constructor(private githubService: GithubService){}
+  constructor(){}
   title = 'Portfolio';
 
   ngOnInit(): void {
-      this.githubService.getRepos().subscribe((repos) => console.log(repos));
   }
 
 
