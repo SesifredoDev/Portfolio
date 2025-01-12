@@ -51,7 +51,14 @@ export class GithubService {
   private getRepoDetails(repo: any): Observable<{ rawBaseUrl: string }> {
     const repoContentsUrl = `${this.baseUrl}/repos/${this.user}/${repo.name}/contents/portfolioDetails`;
 
-    return this.http.get<any[]>(repoContentsUrl).pipe(
+    return this.http.get<any[]>(repoContentsUrl,
+    //    {
+    //   headers:{
+    //     access_token: '',
+        
+    //   }
+    // }
+  ).pipe(
       map((contents) => {
         const hasBanner = contents.some((file) => file.name === 'banner.jpg');
         const hasDescription =  contents.some((file) => file.name === 'description.md');
