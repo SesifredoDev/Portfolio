@@ -14,7 +14,7 @@ The **GitHub Portfolio Explorer** is a dynamic, user-friendly web application bu
      - Location  
      - Number of repositories  
      - Followers and following  
-
+![alt text](https://fastly.picsum.photos/id/740/200/300.jpg?hmac=xGwbWP1ZuaeJBMwh-M84vhuZJwd9V9chUBV1IK6-fbk)
 3. **Repository List with Filtering**  
    - Retrieves and lists all repositories from the GitHub account.  
    - Users can filter repositories by:
@@ -72,11 +72,3 @@ function hello(){
     This is a test
 }
 ```
-
-
-flowchart TD
-    A[Start] --> B{Decision?}
-    B -->|Yes| C[Do Task 1]
-    B -->|No| D[Do Task 2]
-    C --> E[End]
-    D --> E

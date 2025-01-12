@@ -52,9 +52,39 @@ igx-carousel{  height: min-content;
 markdown{
     overflow: auto;
     padding-top: 0px;
+    font-size: small;
 }
 
+
 :host ::ng-deep{
+    h1{
+        font-size: 2rem !important;
+        font-family: none;
+        font-weight: none;
+        line-height: 0 !important;
+        letter-spacing:none !important;
+        text-transform: none;
+        margin-top: none;
+        margin-bottom: none;
+    }
+    h2{
+        font-size: 1.5rem !important;
+        font-family: none;
+        font-weight: none;
+        line-height: 0 !important;
+        letter-spacing:none !important;
+        text-transform: none;
+        margin-top: none;
+        margin-bottom: none;
+    }
+
+    p{
+        font-size: small !important;
+    }
+    .ig-typography *{
+        line-height: 0 !important;
+    }
+    
     .image-container {
         max-width: 85%;
         display: flex;

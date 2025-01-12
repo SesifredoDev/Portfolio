@@ -1,6 +1,6 @@
 import { NgModule, SecurityContext } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownModule, MERMAID_OPTIONS, provideMarkdown } from 'ngx-markdown';
 import { PortfolioComponent } from './portfolio.component';
 import { portfolioRoutingModule } from './portfolio-routing.module';
 import { MatCardModule } from '@angular/material/card';
@@ -17,11 +17,32 @@ import { RouterModule } from '@angular/router'; // Corrected import for RouterMo
     MatCardModule,
     portfolioRoutingModule,
     MarkdownModule.forRoot({
-      sanitize: SecurityContext.NONE
+      sanitize: SecurityContext.NONE,
+      mermaidOptions: {
+        provide: MERMAID_OPTIONS,
+        useValue: {
+          darkMode: true,
+          look: 'handDrawn',
+        },
+      },
     }),
+    
+    MarkdownModule.forChild(),
     IgxCarouselModule, // Changed to the correct module
     HammerModule,
     RouterModule // Changed to the correct module
+  ],
+  providers:[
+    
+    provideMarkdown({
+      mermaidOptions: {
+        provide: MERMAID_OPTIONS,
+        useValue: {
+          darkMode: true,
+          look: 'handDrawn',
+        },
+      },
+    }),
   ]
 })
 export class PortfolioModule { }
