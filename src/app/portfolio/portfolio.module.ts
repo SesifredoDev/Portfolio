@@ -7,10 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import { IgxCarouselModule } from 'igniteui-angular'; // Corrected import for carousel module
 import { HammerModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; // Corrected import for RouterModule
+import { TimelineSliderComponent } from '../timeline-slider/timeline-slider.component';
 
 @NgModule({
   declarations: [
-    PortfolioComponent
+    PortfolioComponent,
+    TimelineSliderComponent
   ],
   imports: [
     CommonModule,
@@ -26,11 +28,10 @@ import { RouterModule } from '@angular/router'; // Corrected import for RouterMo
         },
       },
     }),
-    
     MarkdownModule.forChild(),
     IgxCarouselModule, // Changed to the correct module
     HammerModule,
-    RouterModule // Changed to the correct module
+    RouterModule, // Changed to the correct module,
   ],
   providers:[
     

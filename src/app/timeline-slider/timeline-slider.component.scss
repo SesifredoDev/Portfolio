@@ -1,0 +1,85 @@
+.timeline-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 100px;
+  // background-color: #0d0d0d;
+  border-radius: 5px;  padding: 25px;
+}
+
+.slider {
+  position: relative;
+  height: 10px;
+  background-color: #1c0029;
+  box-shadow: 0 0px 20px 10px rgba(65, 65, 65, 0.3) !important ;
+  margin-top: 50px;
+}
+
+.notch {
+  position: absolute;
+  top: -10px;
+  width: 1px;
+  background-color: #fff;
+}
+
+.notch.month {
+  height: 10px;
+}
+
+.notch.year {
+  height: 30px;
+  width: 2px;
+  background-color: #ffffff;
+}
+
+.year-label {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.thumb {  
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  top: -5px;
+  cursor: grab;
+
+}
+.card{
+  position: absolute;
+  top: 40%;
+  pointer-events: none;
+
+}
+.card img{
+  width: 50px;
+  height: 50px;
+}
+.card .pointer-line{
+  background: white;
+  height: 100px;
+  width: 2px;
+  margin-left: 50%;
+}
+.card .card-content{  transform: rotate(90deg);
+  margin-top: 50%;
+  width: 10vh;
+  display: flex;
+  align-content: center;
+  box-shadow: 0 0px 20px 14px rgba(89, 0, 255, 0.3) !important;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+*{
+  -webkit-user-select: none; /* Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; /* Standard */
+
+}

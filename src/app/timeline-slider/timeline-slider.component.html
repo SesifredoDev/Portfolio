@@ -1,0 +1,25 @@
+<div class="timeline-container">
+  <div class="slider" (mousedown)="startDrag($event)" (mousemove)="onDrag($event)" (mouseup)="endDrag()">
+    <!-- Large notches for years -->
+    <div *ngFor="let year of years" class="notch year" [style.left.%]="year.position">
+      <div class="year-label">{{ year.label }}</div>
+    </div>
+
+
+    <!-- Thumb -->
+    <div class="thumb" [style.left.%]="thumbPosition"></div>
+  </div>
+
+  
+
+    <!-- Cards with pointers -->
+    <div *ngFor="let card of cards" class="card" [style.left.%]="card.position">
+      <div class="pointer-line"></div>
+      <div class="card-content">
+        <img [src]="card.img" alt="">
+        
+        <p>{{ card.label }}</p>
+      </div>
+    </div>
+
+</div>
