@@ -31,7 +31,12 @@
     "fflate": "^0.8.1",
     "hammerjs": "^2.0.8",
     "igniteui-angular": "^17.2.27",
+    "katex": "^0.16.19",
+    "marked": "^15.0.0",
+    "mermaid": "^11.4.1",
     "minireset.css": "~0.0.4",
+    "ngx-markdown": "^19.0.0",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

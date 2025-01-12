@@ -54,8 +54,7 @@ export class GithubService {
     return this.http.get<any[]>(repoContentsUrl).pipe(
       map((contents) => {
         const hasBanner = contents.some((file) => file.name === 'banner.jpg');
-        const hasDescription = true
-        // contents.some((file) => file.name === 'description.md');
+        const hasDescription =  contents.some((file) => file.name === 'description.md');
 
 
         if (hasBanner && hasDescription) {

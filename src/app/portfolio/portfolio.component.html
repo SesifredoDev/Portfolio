@@ -1,11 +1,5 @@
 <div class="portfolio-container">
     <div class="portfolio-card">
-        <mat-card-header>
-            <mat-card-title>
-                <h3></h3>
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
             <!-- <c-carousel>
                 <c-carousel-indicators></c-carousel-indicators>
                 <c-carousel-inner>
@@ -21,15 +15,12 @@
                 <igx-slide *ngFor="let slide of slides">
                     <div class="live-item">
                             <img class="card-img" [src]="slide.banner" alt="">
-                            <div>
-                                <h3>{{slide.name}}</h3>
+                            <div class="markdown-container">                                
+                                <markdown mermaid katex [src]="slide.description"></markdown>
                             </div>
                     </div>
                 </igx-slide>
             </igx-carousel>
-        </mat-card-content>
-        
-
     </div>
 
 </div>

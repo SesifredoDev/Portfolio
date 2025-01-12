@@ -66,3 +66,12 @@ This project showcases skills in:
 - Writing clean, maintainable, and scalable Angular code.  
 
 The **GitHub Portfolio Explorer** demonstrates proficiency in Angular development and the ability to build visually appealing and data-driven web applications.
+
+```
+function hello(){
+    This is a test
+}
+
+
+
+```

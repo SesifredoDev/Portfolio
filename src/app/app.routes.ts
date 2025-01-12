@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,7 @@ export const routes: Routes = [
     },
     {
         path: 'portfolio',
-        component: PortfolioComponent,
+        loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule),
         
         
     }

@@ -5,27 +5,24 @@ import { RouterLink } from '@angular/router';
 import { GithubService } from '../shared/services/github/github.service';
 import { HammerModule } from '@angular/platform-browser';
 import { IGX_CAROUSEL_DIRECTIVES } from 'igniteui-angular';
-
 @Component({
   selector: 'app-portfolio',
-  standalone: true,
-  imports: [MatCardModule, NgFor, RouterLink, HammerModule, IGX_CAROUSEL_DIRECTIVES],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent implements OnInit, AfterViewInit{
-    constructor(private githubService: GithubService){}
+export class PortfolioComponent implements OnInit, AfterViewInit {
+  constructor(private githubService: GithubService) { }
 
-    slides: any[] = [];
+  slides: any[] = [];
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
 
-    ngAfterViewInit(): void {
-        
-        this.githubService.getRepos().subscribe((repos: any[]) => {
-          this.slides = repos;
-          console.log(this.slides)
-        });
-    }
+  ngAfterViewInit(): void {
+
+    this.githubService.getRepos().subscribe((repos: any[]) => {
+      this.slides = repos;
+      console.log(this.slides)
+    });
+  }
 }

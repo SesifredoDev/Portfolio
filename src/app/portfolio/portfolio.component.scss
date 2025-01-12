@@ -1,9 +1,7 @@
 
 .portfolio-card{
     width: 100vw;
-    height: 80vh;
     overflow: auto;
-    margin: auto;
 }
 
 .portfolio-container{
@@ -22,23 +20,38 @@
   }
 
 .live-item{
-    height: 40vh;
-    width: 80vw;
+    height: 65vh;
+    width: 90vw;
     padding: 15px;
     box-shadow: 0 0px 20px 14px rgb(89 0 255 / 17%) !important ;
     display: flex;
+}
+.live-item .markdown-container{
+    overflow: auto;
+    padding: 2vh;
 }
 
 .igx-slide{
     background: none;
     padding-left: 3vw;
     padding-right: 3vw;
-    height: 50vh;
+    height: 65vh;
 }
 .card-img{
-    width: 30%;
+    width: 20vw;
     height: 100%;
     object-fit: cover;
+}
+igx-carousel{
+    height: 70vh;
+    margin: none;
+    margin-top: 5vh;
+}
+
+
+// Markdown
+markdown{
+    overflow: auto;
 }
 
 :host ::ng-deep{
@@ -60,13 +73,15 @@
         align-items: center;
         max-width: 100%;
         width: unset;
+        height: 70vh;
     }
     .igx-carousel__inner{
     
-        height: 50vh !important;
+        height: 70vh !important;
     }
     .igx-slide img {
-        object-fit: fill;
+        object-fit: cover;
         max-width: 90%;
     }
 }
+
