@@ -11,16 +11,18 @@
                 <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
               </c-carousel> -->
               
-            <igx-carousel>
+            <igx-carousel (slideChanged)="slideChanged($event)">
                 <igx-slide *ngFor="let slide of slides">
                     <div class="live-item">
                             <img class="card-img" [src]="slide.banner" alt="">
-                            <div class="markdown-container">                                
+                            <div class="markdown-container">     
+                                <button mat-raised-button color="Secondary">Go to Project</button>                           
                                 <markdown [src]="slide.description"></markdown>
                             </div>
                     </div>
                 </igx-slide>
             </igx-carousel>
+            <app-timeline-slider [projects]="slides" [currentIndex]="currentIndex"></app-timeline-slider>
     </div>
 
 </div>

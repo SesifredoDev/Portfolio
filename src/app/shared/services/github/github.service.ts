@@ -9,7 +9,9 @@ export interface Repo {
   updated: string;
   banner: string;
   description: string;
+  extra: string;
   topics: string[];
+  
 }
 
 @Injectable({
@@ -33,14 +35,26 @@ export class GithubService {
         forkJoin(
           filteredRepos.map((repo) =>
             this.getRepoDetails(repo).pipe(
-              map((details) => ({
+              map((details) => {
+                
+                let result ={
                 name: repo.name,
                 creation: repo.created_at,
                 updated: repo.updated_at,
                 banner: `${details.rawBaseUrl}/banner.jpg`,
                 description: `${details.rawBaseUrl}/description.md`,
                 topics: repo.topics,
-              }))
+                extra:  "",
+                icon: "",
+              }
+              if(details.hasExtra){
+                result.extra = `${details.rawBaseUrl}/extra.json`;
+              }
+              if(details.hasIcon){
+                result.icon = `${details.rawBaseUrl}/icon.jpg`;
+              }
+              return result;
+            })
             )
           )
         )
@@ -48,20 +62,18 @@ export class GithubService {
     );
   }
 
-  private getRepoDetails(repo: any): Observable<{ rawBaseUrl: string }> {
+  private getRepoDetails(repo: any): Observable<{ rawBaseUrl: string,  hasExtra: boolean, hasIcon: boolean }> {
     const repoContentsUrl = `${this.baseUrl}/repos/${this.user}/${repo.name}/contents/portfolioDetails`;
 
     return this.http.get<any[]>(repoContentsUrl, {
-      
     }).pipe(
       map((contents) => {
-        const hasBanner = contents.some((file) => file.name === 'banner.jpg');
-        const hasDescription =  contents.some((file) => file.name === 'description.md');
+        const hasIcon =  contents.some((file) => file.name === 'icon.jpg');
+        
+        const hasExtra =  contents.some((file) => file.name === 'extra.json');
 
+          return { rawBaseUrl: `https://raw.githubusercontent.com/${this.user}/${repo.name}/main/portfolioDetails`, hasExtra, hasIcon };
 
-        if (hasBanner && hasDescription) {
-          return { rawBaseUrl: `https://raw.githubusercontent.com/${this.user}/${repo.name}/main/portfolioDetails` };
-        }
         throw new Error(`Repo ${repo.name} does not have required files.`);
       })
     );

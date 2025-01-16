@@ -3,7 +3,11 @@
 The **GitHub Portfolio Explorer** is a dynamic, user-friendly web application built using **Angular Material** that showcases an individual’s GitHub profile and repositories. This project demonstrates seamless integration with the **GitHub API**, providing users with real-time data and interactive visualizations of their GitHub activity.
 
 ## Key Features
-
+| Month | Savings |
+| -------- | ------- |
+| January | $250 |
+| February | $80 |
+| March | $420 |
 1. **Responsive Design**  
    - Fully responsive interface designed with Angular Material components for a modern, clean, and intuitive user experience.
 
@@ -14,7 +18,8 @@ The **GitHub Portfolio Explorer** is a dynamic, user-friendly web application bu
      - Location  
      - Number of repositories  
      - Followers and following  
-![alt text](https://fastly.picsum.photos/id/740/200/300.jpg?hmac=xGwbWP1ZuaeJBMwh-M84vhuZJwd9V9chUBV1IK6-fbk)
+
+
 3. **Repository List with Filtering**  
    - Retrieves and lists all repositories from the GitHub account.  
    - Users can filter repositories by:

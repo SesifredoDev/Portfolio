@@ -19,8 +19,13 @@ export class HomeComponent {
       years: 9
     },
     {
-      title: 'Git',
-      years: 7
+      title: 'Ionic',
+      years: 5
+    },
+    
+    {
+      title: 'Node.js',
+      years: 9
     },
     
     {
@@ -29,13 +34,22 @@ export class HomeComponent {
     },
     
     {
-      title: 'Git',
-      years: 7
+      title: 'Python',
+      years: 12
+    },
+    {
+      title: 'Firebase',
+      years: 4
     },
     
     {
-      title: 'Git',
-      years: 7
+      title: 'AWS',
+      years: 2
+    },
+    
+    {
+      title: 'Java',
+      years: 2
     },
   ];
 

@@ -1,0 +1,109 @@
+.timeline-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  margin-top: 9vh;
+  height: 100px;
+  // background-color: #0d0d0d;
+  border-radius: 5px;  padding: 25px;
+}
+
+.slider {
+  position: relative;
+  height: 10px;
+  background-color: #1c0029;
+  box-shadow: 0 0px 20px 10px rgba(65, 65, 65, 0.3) !important ;
+  margin-top: 50px;
+}
+
+.notch {
+  position: absolute;
+  top: -10px;
+  width: 1px;
+  background-color: #fff;
+}
+
+
+.active-card{
+  box-shadow: 0 0px 20px 14px rgba(89, 0, 255, 0.3) !important;
+}
+
+.notch.month {
+  height: 10px;
+}
+
+.notch.year {
+  height: 30px;
+  width: 2px;
+  background-color: #ffffff;
+}
+
+.year-label {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.thumb {  
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  top: -5px;
+  cursor: grab;
+
+}
+.card{
+  position: absolute;
+  top: 40%;
+  pointer-events: none;
+
+}
+.even-card{
+ rotate: 180deg;
+ bottom: 100%;
+
+}
+.card img{
+  width: 50px;
+  height: 50px;
+}
+.even-card  img{
+  rotate: 180deg;
+}
+.card .pointer-line{
+  background: white;
+  height: 40px;
+  width: 2px;
+  margin-left: 50%;
+}
+.card .card-content{    
+
+  box-shadow: 0 0px 20px 14px rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: black;
+  position: absolute;
+  left: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+*{
+  -webkit-user-select: none; /* Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; /* Standard */
+
+}
+
+p{
+  margin: auto;
+  margin-left: 10px;
+  transform: rotate(90deg);
+}
