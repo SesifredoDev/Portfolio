@@ -55,12 +55,12 @@ $theme-background: (
 }
 
 // Define Material color palettes
-$custom-primary: mat.define-palette(mat.$deep-purple-palette, 900, 500, 100);
-$custom-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
-$custom-warn: mat.define-palette(mat.$red-palette);
+$custom-primary: mat.m2-define-palette(mat.$m2-deep-purple-palette, 900, 500, 100);
+$custom-accent: mat.m2-define-palette(mat.$m2-purple-palette, A200, A100, A400);
+$custom-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 // Create the theme
-$custom-theme: mat.define-dark-theme((
+$custom-theme: mat.m2-define-dark-theme((
   color: (
     primary: $custom-primary,
     accent: $custom-accent,
@@ -84,7 +84,7 @@ body {
 
 .mat-toolbar {
   background: $primary-color;
-  color: mat.get-color-from-palette($custom-accent, A200);
+  color: mat.m2-get-color-from-palette($custom-accent, A200);
   font-family: 'Geist Mono', monospace;
   height: 50px !important;
 }
@@ -96,7 +96,7 @@ body {
   color: map-get($theme-foreground, text);
 
   &:hover {
-    background-color: mat.get-color-from-palette($custom-accent, A400);
+    background-color: mat.m2-get-color-from-palette($custom-accent, A400);
   }
 }
 
@@ -117,12 +117,12 @@ body {
 }
 
 .mat-checkbox .mat-checkbox-background {
-  background-color: mat.get-color-from-palette($custom-accent, A200);
+  background-color: mat.m2-get-color-from-palette($custom-accent, A200);
   border-radius: 4px;
 }
 
 .mat-slider .mat-slider-thumb {
-  background-color: mat.get-color-from-palette($custom-accent, A200);
+  background-color: mat.m2-get-color-from-palette($custom-accent, A200);
 }
 
 .mat-slider .mat-slider-track {
@@ -137,7 +137,7 @@ nav a {
   margin: 0 8px;
 
   &:hover {
-    color: mat.get-color-from-palette($custom-accent, A200);
+    color: mat.m2-get-color-from-palette($custom-accent, A200);
   }
 }
 
