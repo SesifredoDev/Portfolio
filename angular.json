@@ -54,7 +54,7 @@
               "node_modules/katex/dist/contrib/auto-render.min.js"
             ],
             "server": "src/main.server.ts",
-            "prerender": false,
+            "prerender": true,
             "ssr": {
               "entry": "server.ts"
             },
@@ -70,7 +70,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",

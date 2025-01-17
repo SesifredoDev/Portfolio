@@ -66,6 +66,7 @@ export class GithubService {
     const repoContentsUrl = `${this.baseUrl}/repos/${this.user}/${repo.name}/contents/portfolioDetails`;
 
     return this.http.get<any[]>(repoContentsUrl, {
+
     }).pipe(
       map((contents) => {
         const hasIcon =  contents.some((file) => file.name === 'icon.jpg');

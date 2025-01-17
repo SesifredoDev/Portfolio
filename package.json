@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Portfolio": "node dist/portfolio/server/server.mjs"
+    "serve:ssr:Portfolio": "node dist/portfolio/server/server.mjs",
+    "deploy": "ng build --base-href https://sesifredodev.github.io/Portoflio/ && npx ngh --dir dist/portfolio/browser  --no-silent"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +26,7 @@
     "@angular/ssr": "^17.1.0",
     "@coreui/icons-angular": "~5.1.11",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@igniteui/material-icons-extended": "^3.0.0",
+    "@igniteui/material-icons-extended": "^3.0.0 -f",
     "@popperjs/core": "~2.11.8",
     "express": "^4.18.2",
     "fflate": "^0.8.1",
@@ -35,7 +36,7 @@
     "marked": "^15.0.0",
     "mermaid": "^11.4.1",
     "minireset.css": "~0.0.4",
-    "ngx-markdown": "^19.0.0",
+    "ngx-markdown": "^19.0.0 -f",
     "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss',
+  styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit, AfterViewInit {
   constructor(private githubService: GithubService, private http: HttpClient) { }
