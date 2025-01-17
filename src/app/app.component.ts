@@ -4,7 +4,7 @@ import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { slideInAnimation } from './animations';
 import { GithubService } from './shared/services/github/github.service';
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
