@@ -49,6 +49,8 @@ export class TimelineSliderComponent implements OnChanges{
     }
   }
   generateCards(): void {
+    
+    this.projects = this.projects.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
     if (!this.projects || this.projects.length === 0) return;
   
     this.cards = this.projects.map((project, index) => {

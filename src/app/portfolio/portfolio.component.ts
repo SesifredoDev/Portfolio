@@ -35,12 +35,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       }
   
 
-      console.log(this.slides)
       
     });
   }
 
   ngAfterViewInit(): void {
+    
+    this.slides = this.slides.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
   }
 
   slideChanged(event: any){
