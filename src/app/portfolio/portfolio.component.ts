@@ -22,10 +22,14 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
            await this.http.get(repos[i].extra).subscribe((response: any) => {
             if(response.time) repos[i].creation = response.time
               console.log(repos[i])
+              this.slides.push(repos[i])
+              this.slides = this.slides.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
               
-             this.projects = repos;
            });
 
+        }else{
+          
+          this.slides.push(repos[i])
         }
 
       }
@@ -37,7 +41,6 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-     this.slides = this.projects.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
   }
 
   slideChanged(event: any){
