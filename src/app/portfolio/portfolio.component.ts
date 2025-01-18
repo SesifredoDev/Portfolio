@@ -20,14 +20,15 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         if(repos[i].extra !== ""){
            await this.http.get(repos[i].extra).subscribe((response: any) => {
             if(response.time) repos[i].creation = response.time
-            console.log(repos[i])
+              console.log(repos[i])
+              
+              this.slides = repos.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
            });
 
         }
 
       }
   
-      this.slides = repos.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
 
       console.log(this.slides)
       
