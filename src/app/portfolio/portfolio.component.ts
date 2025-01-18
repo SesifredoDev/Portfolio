@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class PortfolioComponent implements OnInit, AfterViewInit {
   constructor(private githubService: GithubService, private http: HttpClient) { }
   slides: any[] = [];
+  projects: any[] = []
 
   currentIndex: number =  0;
 
@@ -22,7 +23,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
             if(response.time) repos[i].creation = response.time
               console.log(repos[i])
               
-              this.slides = repos.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
+             this.projects = repos;
            });
 
         }
@@ -36,7 +37,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
+     this.slides = this.projects.sort((a,b) => (new Date(b.creation)).getTime() - new Date(a.creation).getTime());
   }
 
   slideChanged(event: any){
