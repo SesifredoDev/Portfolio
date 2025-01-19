@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import * as fs from 'fs';
 @Component({
   selector: 'app-timeline-slider',
@@ -10,6 +10,8 @@ export class TimelineSliderComponent implements OnChanges{
   months = Array.from({ length: 120 }, (_, i) => ({ position: i * 0.833 })); // 120 months (10 years * 12)
   @Input() projects: Array<{ name: string; creation: string; updated: string; banner: string; description: string; topics: string[], icon: string }> = [];
   @Input() currentIndex: number = 0;
+
+  @Output() selectCard = new EventEmitter<number>();
   
   thumbPosition = 0;
   dragging = false;
@@ -95,5 +97,11 @@ export class TimelineSliderComponent implements OnChanges{
 
     return result;
 
+  }
+
+
+  cardClick(index: number){
+    this.selectCard.emit(index);
+    console.log("card clicked", index)
   }
 }

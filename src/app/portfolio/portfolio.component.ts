@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { GithubService } from '../shared/services/github/github.service';
 import { HttpClient } from '@angular/common/http';
+import { IgxCarouselComponent } from 'igniteui-angular';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -8,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PortfolioComponent implements OnInit, AfterViewInit {
   constructor(private githubService: GithubService, private http: HttpClient) { }
+  
+  @ViewChild('carousel', { static: true }) carousel!: IgxCarouselComponent;
+
   slides: any[] = [];
   projects: any[] = []
 
@@ -42,5 +46,11 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   slideChanged(event: any){
    this.currentIndex =  (event.slide.index)
+  }
+
+  adjustSlide(index: number){
+    let slide = this.carousel.get(index)
+    this.carousel.select(slide);
+    this.currentIndex = index;
   }
 }

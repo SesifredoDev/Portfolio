@@ -11,7 +11,7 @@
                 <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
               </c-carousel> -->
               
-            <igx-carousel (slideChanged)="slideChanged($event)">
+            <igx-carousel (slideChanged)="slideChanged($event)" #carousel id="carousel">
                 <igx-slide *ngFor="let slide of slides">
                     <div class="live-item">
                             <img class="card-img" [src]="slide.banner" alt="">
@@ -22,7 +22,7 @@
                     </div>
                 </igx-slide>
             </igx-carousel>
-            <app-timeline-slider [projects]="slides" [currentIndex]="currentIndex"></app-timeline-slider>
+            <app-timeline-slider [projects]="slides" [currentIndex]="currentIndex" (selectCard)="adjustSlide($event)"></app-timeline-slider>
     </div>
 
 </div>

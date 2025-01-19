@@ -4,7 +4,7 @@
     <div *ngFor="let year of years; let i = index" class="notch year"  [style.left.%]="year.position">
       <div class="year-label">{{ year.label }}</div>
     </div>
-    <div *ngFor="let card of cards; let i = index" class="card" [style.left.%]="card.position" [ngClass]="{'even-card': i % 2 === 0}">
+    <div *ngFor="let card of cards; let i = index" class="card" [style.left.%]="card.position" [ngClass]="{'even-card': i % 2 === 0}" (click)="cardClick(i)">
       <div class="pointer-line"></div>
       <div [ngClass]="{'active-card': currentIndex ===  i}" class="card-content" >
         <img [src]="card.img"  alt="">
