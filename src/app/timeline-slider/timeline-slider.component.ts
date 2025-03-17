@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import * as fs from 'fs';
 @Component({
   selector: 'app-timeline-slider',
   templateUrl: './timeline-slider.component.html',
   styleUrls: ['./timeline-slider.component.scss']
 })
-export class TimelineSliderComponent implements OnChanges{
+export class TimelineSliderComponent implements OnInit{
   years : Array<{ position: number; label: string; date?: Date }>= [];
   months = Array.from({ length: 120 }, (_, i) => ({ position: i * 0.833 })); // 120 months (10 years * 12)
   @Input() projects: Array<{ name: string; creation: string; updated: string; banner: string; description: string; topics: string[], icon: string }> = [];
@@ -17,7 +17,7 @@ export class TimelineSliderComponent implements OnChanges{
   dragging = false;
   cards: any[] = [];
 
-  async  ngOnChanges(){
+  async  ngOnInit(){
       this.generateNotches();
     
       this.generateCards();
