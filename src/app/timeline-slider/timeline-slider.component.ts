@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import * as fs from 'fs';
 @Component({
   selector: 'app-timeline-slider',
   templateUrl: './timeline-slider.component.html',
   styleUrls: ['./timeline-slider.component.scss']
 })
-export class TimelineSliderComponent implements OnInit{
+export class TimelineSliderComponent implements AfterViewInit{
   years : Array<{ position: number; label: string; date?: Date }>= [];
   months = Array.from({ length: 120 }, (_, i) => ({ position: i * 0.833 })); // 120 months (10 years * 12)
   @Input() projects: Array<{ name: string; creation: string; updated: string; banner: string; description: string; topics: string[], icon: string }> = [];
@@ -17,7 +17,7 @@ export class TimelineSliderComponent implements OnInit{
   dragging = false;
   cards: any[] = [];
 
-  async  ngOnInit(){
+  async  ngAfterViewInit(){
       this.generateNotches();
     
       this.generateCards();
