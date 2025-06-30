@@ -1,0 +1,120 @@
+
+.portfolio-card{
+    width: 100vw;
+    overflow: auto;
+}
+
+.portfolio-container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+}
+
+
+.example-header-image {
+    background-image: url('../../assets/profile-img.svg');
+    background-size: cover;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+.live-item{
+    height: 55vh;
+    width: 90vw;
+    padding: 15px;
+    box-shadow: 0 0px 20px 14px rgb(89 0 255 / 30%) !important ;
+    display: flex;
+}
+.live-item .markdown-container{
+    overflow: auto;margin: 5vh;
+    margin-top: 5vh;
+  margin-top: 1vh;
+
+}
+
+.igx-slide{
+    background: none;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 55vh;
+}
+.card-img{
+    width: 20vw;
+    height: 100%;
+    object-fit: cover;
+    
+}
+igx-carousel{  height: min-content;
+    margin: none;
+    margin-top: 5vh;
+}
+
+
+// Markdown
+markdown{
+    overflow: auto;
+    padding-top: 0px;
+    font-size: small;
+}
+
+
+:host ::ng-deep{
+    h1{
+        font-size: 2rem !important;
+        font-family: none;
+        font-weight: none;
+        line-height: 1.2 !important;
+        letter-spacing:none !important;
+        text-transform: none;
+        margin-top: none;
+        margin-bottom: none;
+    }
+    h2{
+        font-size: 1.5rem !important;
+        font-family: none;
+        font-weight: none;
+        line-height: 1.2 !important;
+        letter-spacing:none !important;
+        text-transform: none;
+        margin-top: none;
+        margin-bottom: none;
+    }
+
+    p{
+        font-size: small !important;
+    }
+    .ig-typography *{
+        line-height: 0 !important;
+    }
+    
+    .image-container {
+        max-width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .igx-carousel {
+        max-width: 100%;
+        width: unset;
+    }
+
+    .igx-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: unset;
+        height: 60vh;
+    }
+    .igx-carousel__inner{
+    
+        height: 60vh !important;
+    }
+    .igx-slide img {
+        object-fit: cover;
+        max-width: 90%;
+    }
+}
+

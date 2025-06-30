@@ -18,7 +18,6 @@ export class TimelineSliderComponent implements AfterViewInit{
   cards: any[] = [];
 
   async  ngAfterViewInit(){
-      this.generateNotches();
     
       this.generateCards();
   }

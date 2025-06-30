@@ -1,0 +1,28 @@
+<div class="portfolio-container">
+    <div class="portfolio-card">
+            <!-- <c-carousel>
+                <c-carousel-indicators></c-carousel-indicators>
+                <c-carousel-inner>
+                  <c-carousel-item *ngFor="let slide of slides">
+                    
+                  </c-carousel-item>
+                </c-carousel-inner>
+                <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+                <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+              </c-carousel> -->
+              
+            <igx-carousel (slideChanged)="slideChanged($event)" #carousel id="carousel">
+                <igx-slide *ngFor="let slide of slides">
+                    <div class="live-item">
+                            <img class="card-img" [src]="slide.banner" alt="">
+                            <div class="markdown-container">     
+                                <button mat-raised-button color="Secondary">Go to Project</button>                           
+                                <markdown [src]="slide.description"></markdown>
+                            </div>
+                    </div>
+                </igx-slide>
+            </igx-carousel>
+            <app-timeline-slider [projects]="slides" [currentIndex]="currentIndex" (selectCard)="adjustSlide($event)"></app-timeline-slider>
+    </div>
+
+</div>
