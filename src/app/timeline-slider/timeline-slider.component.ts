@@ -5,7 +5,7 @@ import * as fs from 'fs';
   templateUrl: './timeline-slider.component.html',
   styleUrls: ['./timeline-slider.component.scss']
 })
-export class TimelineSliderComponent implements AfterViewInit{
+export class TimelineSliderComponent implements OnChanges{
   years : Array<{ position: number; label: string; date?: Date }>= [];
   months = Array.from({ length: 120 }, (_, i) => ({ position: i * 0.833 })); // 120 months (10 years * 12)
   @Input() projects: Array<{ name: string; creation: string; updated: string; banner: string; description: string; topics: string[], icon: string }> = [];
@@ -17,7 +17,7 @@ export class TimelineSliderComponent implements AfterViewInit{
   dragging = false;
   cards: any[] = [];
 
-  async  ngAfterViewInit(){
+  async  ngOnChanges(){
     
       this.generateCards();
   }
